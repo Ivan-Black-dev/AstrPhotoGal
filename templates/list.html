@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='list.css') }}">
+    <title>{{title}}</title>
+</head>
+<body>
+        {% for data in list%}
+            <div class="item">
+                <a href="{{ data.img }}" target="_blank">
+                <img src="{{ data.img }}" alt="{{data.name}}">
+                </a>
+                <h1>{{data.name}}, {{data.catalog}}</h1>
+                <h2>{{data.description}}</h2>
+                <h4>{{data.place}}, {{ data.date }}</h4>
+            </div>
+        {% endfor %}
+</body>
+</html>
